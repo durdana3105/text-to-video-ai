@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text to Video AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    textarea {
+      width: 60%;
+      height: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎥 Text to Video AI</h1>
+  <p>Enter a prompt and generate a short AI video</p>
+
+  <textarea id="prompt" placeholder="A robot walking in a futuristic city..."></textarea><br>
+
+  <button onclick="generate()">Generate Video</button>
+
+  <p id="status"></p>
+
+  <script>
+    async function generate() {
+      document.getElementById("status").innerText = "Generating video... please wait ⏳";
+      const prompt = document.getElementById("prompt").value;
+
+      const response = await fetch(`/generate?prompt=${encodeURIComponent(prompt)}`, {
+        method: "POST"
+      });
+
+      const data = await response.json();
+      document.getElementById("status").innerText = "Video generated successfully ✅";
+    }
+  </script>
+
+</body>
+</html>

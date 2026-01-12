@@ -1,3 +1,6 @@
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
 from fastapi import FastAPI
 from diffusers import DiffusionPipeline
 import torch
@@ -6,6 +9,8 @@ import uuid
 import imageio
 
 app = FastAPI()
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
+
 
 # Create output folder
 os.makedirs("outputs", exist_ok=True)

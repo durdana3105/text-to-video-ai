@@ -14,4 +14,6 @@ A web-based Text-to-Video AI application that converts natural language prompts 
 - Hugging Face Diffusers
 - HTML, CSS, JavaScript
 
+## Deployment
+This project is deployed on Hugging Face Spaces using GPU for inference.
 
