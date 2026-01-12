@@ -17,3 +17,8 @@ A web-based Text-to-Video AI application that converts natural language prompts 
 ## Deployment
 This project is deployed on Hugging Face Spaces using GPU for inference.
 
+## Model Inference
+This project uses the Hugging Face Inference API to perform text-to-video generation. 
+The model runs on Hugging Face's hosted infrastructure, removing the need for local GPU resources 
+while maintaining real-world AI integration.
+
